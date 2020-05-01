@@ -10,8 +10,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Test01</artifactId>
-    <name>Test01</name>
+    <artifactId>Test02</artifactId>
+    <name>Test02</name>
+
     <dependencies>
         <dependency>
             <groupId>io.appium</groupId>
@@ -22,12 +23,13 @@
             <artifactId>testng</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
             <groupId>cn.ykstudy</groupId>
             <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

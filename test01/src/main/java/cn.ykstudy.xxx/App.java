@@ -43,24 +43,24 @@ public class App {
 		// 设置测试平台
 		des.setCapability("platformName", "Android");
 		// 设置设备名称
-		des.setCapability("deviceName", "HUAWEI Honor V9");
+		des.setCapability("deviceName", "Redmi K20 Pro");
 		// 设置Android版本
 		des.setCapability("platformVersion", "9");
 		// 连接的物理设备的唯一设备标识
 		des.setCapability("udid", "2f9b7a92");
 		// 配置待测试的apk的路径
 		des.setCapability("app", app.getAbsolutePath());
-		// App安装后的包名,注意与原来的CalcTest.apk不一样
-//		des.setCapability("appPackage", "com.xuekevip");
-		// app测试人员常常要获取activity，进行相关测试,后续会讲到
-//		des.setCapability("appActivity", "com.tianqi2345.homepage.ChooseCityActivity");
+		// 待测试的app的Java package. aapt dump badging manage.apk
+//		des.setCapability("appPackage", "com.xuekevip.manage");
+		// 待测试的app的Activity名字
+//		des.setCapability("appActivity", "com.xuekevip.manage.MainActivity");
 
-      //des.setCapability("automationName", "Appium");//Selendroid //自动化的模式选择
-      //des.setCapability("browserName", "chrome");  //h5
+		//des.setCapability("automationName", "Appium");//Selendroid //自动化的模式选择
+		//des.setCapability("browserName", "chrome");  //h5
 		// 没有新命令时的超时时间设置
 //		des.setCapability("newCommandTimeout", "60");
 		// 跳过检查和对应用进行 debug 签名的步骤
-//		des.setCapability("nosign", "True");
+//		des.setCapability("nosign", true);
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), des);
 		// 设置隐式等待超时时间,默认9500ms
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -90,5 +90,6 @@ public class App {
 				.release();
 		action3.perform();
 		Thread.sleep(2000);
+		driver.quit();
 	}
 }
